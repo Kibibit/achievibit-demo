@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>testing achievibit animation - with header</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic|Material+Icons'>
+<link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Press+Start+2P'>
+<link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+  <div class="btn">show marks</div>
+<div id="mark-header"></div>
+<header id="app-header" class="app-header">
+    <div class="background-container">
+        <div id="background-back" class="background"></div>
+        <div id="background-front" class="background"></div>
+    </div>
+
+    <div class="header-content">
+        <div id="small-toolbar" class="app-toolbar">
+
+            <div class="icon-button">
+                <div class="icon">
+                    <i class="material-icons">menu</i>            
+                </div>
+            </div>
+
+            <div id="small-title" class="small-title">achievibit</div>     
+            <div class="icon-button">
+                <div class="icon">            
+                    <i class="material-icons">search</i>
+                </div>
+            </div>
+
+            <div class="icon-button">
+                <div class="icon">            
+                    <i class="material-icons">more_vert</i>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="large-toolbar" class="app-toolbar tall">
+            <div id="large-title" class="large-title">achievibit</div>
+        </div>
+    </div>
+</header>
+<div class="main">
+    <div class="container">
+        <div class="house" id="house1">
+            <div class="rpg-text-box" id="text1">
+                While the boy went down the road, he understood the meaning of being alone...
+            </div>
+        </div>
+        <div class="house pos2" id="house2">
+            <div class="rpg-text-box" id="text2">
+                He just started relazing that everything he knew was about to be destroyed...
+            </div>
+        </div>
+        <div class="house pos3" id="house3">
+            <div class="rpg-text-box" id="text3">
+                And that he'll have to protect his family with his own strength.
+            </div>
+        </div>
+        <div class="crow" id="crow"></div>
+        <div class="pre-road"></div>
+        <div class="road">
+            <div class="character" id="char1"></div>
+            <div class="mark" id="mark1"></div>
+        </div>
+        <div class="horizontal-part left-to-right">
+            <div class="character" id="char2"></div>
+            <div class="corner"></div>
+            <div class="horizontal-road"></div>
+            <div class="corner"></div>
+        </div>
+        <div class="road road-right">
+            <div class="character" id="char3"></div>
+            <div class="mark" id="mark2"></div>
+        </div>
+        <div class="horizontal-part right-to-left">
+            <div class="character" id="char4"></div>
+            <div class="corner"></div>
+            <div class="horizontal-road"></div>
+            <div class="corner"></div>
+        </div>
+        <div class="road">
+            <div class="character" id="char5"></div>
+            <div class="mark" id="mark3"></div>
+            <div class="mark mark-end" id="mark4"></div>
+        </div>
+    </div>
+</div>
+<div class="hero-fight-parallax">
+    <div class="background"></div>
+    <div class="monster" id="monster"></div>
+    <div class="shadow-hero" id="shadow-hero">hero on hill</div>
+</div>
+<div class="end" id="mark5">The End?</div>
+<footer class="page-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text achievibit-logo">achievibit</h5>
+                <p class="grey-text text-lighten-4">Gamification system as a GitHub Webhook</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text achievibit-logo">Links</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="#!">Help</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">View on GitHub</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Integrate a repository</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            ©Copyright 2017 kibibit - Neil Kalman &lt;thatkookooguy@kibibit.io&gt;
+            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            </div>
+          </div>
+        </footer>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/SplitText.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/ScrollMagic.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/plugins/animation.gsap.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.2/plugins/debug.addIndicators.min.js'></script>
+
+    <script  src="js/index.js"></script>
+
+</body>
+</html>
