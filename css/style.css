@@ -76,7 +76,8 @@ footer.page-footer {
 }
 
 .test-test-test {
-      padding: 300px 100px 0;
+  padding: 300px 100px 0;
+  overflow: hidden;
 }
 
 .main {
