@@ -1,5 +1,7 @@
 console.clear();
 
+$(document).ready(function() {
+
 var SELECTORS = {
     DEBUG_BUTTON: '.btn',
     ANIMATION_CONTAINER: 'body',
@@ -373,4 +375,6 @@ function createHeaderAnimation() {
         header: headerAnimation,
         duration: deltaHeight
     };
+}
+    
 }
