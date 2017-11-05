@@ -75,8 +75,12 @@ footer.page-footer {
   color: white;
 }
 
+.test-test-test {
+      padding: 300px 100px 0;
+}
+
 .main {
-  padding: 300px 100px 0;
+  overflow-x: hidden;
   position: relative;
   width: 100vw;
   min-height: 100%;
