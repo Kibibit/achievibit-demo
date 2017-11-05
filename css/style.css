@@ -270,11 +270,11 @@ body {
 
 .pre-road {
   width: 50px;
-  height: 471px;
+  height: 600px;
   margin-right: auto;
   background: #B69F66;
   position: absolute;
-  top: -471px;
+  top: -600px;
 }
 
 .road {
