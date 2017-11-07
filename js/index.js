@@ -20,7 +20,10 @@ var SELECTORS = {
 var lowestFrameRate = 60;
     
 FPS(function(currFrameRate) {
-    lowestFrameRate = currFrameRate < lowestFrameRate ? currFrameRate : lowestFrameRate;
+    if (currFrameRate < lowestFrameRate) {
+        lowestFrameRate = currFrameRate;
+        console.info('lowest framerate: ' + lowestFrameRate);
+    }
     
     if (lowestFrameRate < 40) {
         ANIMATIONS.text1 && ANIMATIONS.text1.kill();
