@@ -441,8 +441,9 @@ $(document).ready(function() {
 
     self.framesThreshold = framesThreshold || 30;
     self.dropsThreshold = dropsThreshold || 2;
+    self.firstDropsTrigger = true;
 
-    toEmitter(self);
+    Emitter(self);
 
     if (showDebugBox) {
       $('body').append([
@@ -502,8 +503,9 @@ $(document).ready(function() {
           self.trigger('drops-updated', lowestFrameRate);
         }
 
-        if (numberOfDrops >= self.dropsThreshold) {
+        if (self.firstDropsTrigger && numberOfDrops >= self.dropsThreshold) {
           self.trigger('drops-limit', numberOfDrops);
+          self.firstDropsTrigger = false;
           $drops.textContent = numberOfDrops;
         }
       }
