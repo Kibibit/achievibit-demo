@@ -34,18 +34,18 @@ FPS(function(currFrameRate) {
         $lowest.textContent = lowestFrameRate;
     }
     
-    if (currFrameRate < 40) {
+    if (currFrameRate < 30) {
         numberOfDrops++;
         $drops.textContent = numberOfDrops;
         console.info('framerate dropped below 40');
     }
     
-    if (numberOfDrops > 2) {
+    if (numberOfDrops >= 2) {
         ANIMATIONS.text1 && ANIMATIONS.text1.progress(1, false) && ANIMATIONS.text1.kill();
         ANIMATIONS.text2 && ANIMATIONS.text2.progress(1, false) && ANIMATIONS.text2.kill();
         ANIMATIONS.text3 && ANIMATIONS.text3.progress(1, false) && ANIMATIONS.text3.kill();
-        $('.rpg-text-box').addClass('always-show');
-        numberOfDrops = 0;
+        ANIMATIONS.text1 && $('.rpg-text-box').addClass('always-show');
+        ANIMATIONS.text1 && numberOfDrops = 0;
         $drops.textContent = numberOfDrops;
     }
 });
