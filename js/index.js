@@ -19,7 +19,7 @@ $(document).ready(function() {
 
 
 
-  FPS()
+  FPS(30, 2, true)
     .on('drops-limit', function(totalDrops) {
       console.log('FUCK!');
 
