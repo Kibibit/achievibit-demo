@@ -28,7 +28,7 @@ FPS(function(currFrameRate) {
     if (lowestFrameRate < 40) {
         ANIMATIONS.text1 && ANIMATIONS.text1.kill();
         ANIMATIONS.text2 && ANIMATIONS.text2.kill();
-        ANIMATIONS.text3 && ANIMATIONS.text2.kill();
+        ANIMATIONS.text3 && ANIMATIONS.text3.kill();
     }
 });
 
