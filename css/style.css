@@ -32,6 +32,7 @@
   opacity: 0;
   transform: translate(0, 50px);
   transition: all 250ms;
+  max-width: 45vw;
 }
 
 .achievibit-logo {
