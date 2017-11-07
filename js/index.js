@@ -35,6 +35,9 @@ FPS(function(currFrameRate) {
         ANIMATIONS.text1 && ANIMATIONS.text1.progress(1, false) && ANIMATIONS.text1.kill();
         ANIMATIONS.text2 && ANIMATIONS.text2.progress(1, false) && ANIMATIONS.text2.kill();
         ANIMATIONS.text3 && ANIMATIONS.text3.progress(1, false) && ANIMATIONS.text3.kill();
+        $(SELECTORS.TEXT_BOX_1).addClass('always-show');
+        $(SELECTORS.TEXT_BOX_2).addClass('always-show');
+        $(SELECTORS.TEXT_BOX_3).addClass('always-show');
     }
 });
 
