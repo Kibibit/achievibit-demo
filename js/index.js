@@ -16,14 +16,21 @@ var SELECTORS = {
     TEXT_BOX_2: '#text2',
     TEXT_BOX_3: '#text3'
 };
-    
-var lowestFrameRate = 60;
-var numberOfDrops = 0;
+
+    var $lowest;
+    var lowestFrameRate = -1;
+    var numberOfDrops = 0;
     
 FPS(function(currFrameRate) {
+    if (lowestFrameRate === -1) {
+        lowestFrameRate = currFrameRate;
+        $lowest.textContent = lowestFrameRate;
+    }
+    
     if (currFrameRate < lowestFrameRate) {
         lowestFrameRate = currFrameRate;
         console.info('lowest framerate: ' + lowestFrameRate);
+        $lowest.textContent = lowestFrameRate;
     }
     
     if (currFrameRate < 40) {
@@ -416,10 +423,11 @@ function createHeaderAnimation() {
     
   function FPS(callback) {
     if (!$('#framerate').length) {
-        $('body').append('<div class="hud">FPS: <span id="framerate">0</span></div>');
+        $('body').append('<div class="hud">FPS: <span id="framerate">0</span>; lowest FPS: <span id="lowest"></span></div>');
     }
 
     var $framerate = document.querySelector("#framerate");
+    $lowest = document.querySelector("#lowest");
     var prevTime = 0;
     var frames = 0;
     var ticker = TweenLite.ticker;
