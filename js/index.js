@@ -1,6 +1,7 @@
 console.clear();
 
 $(document).ready(function() {
+var ANIMATIONS = {};
 
 var SELECTORS = {
     DEBUG_BUTTON: '.btn',
@@ -16,7 +17,17 @@ var SELECTORS = {
     TEXT_BOX_3: '#text3'
 };
     
-FPS();
+var lowestFrameRate = 60;
+    
+FPS(function(currFrameRate) {
+    lowestFrameRate = currFrameRate < lowestFrameRate ? currFrameRate : lowestFrameRate;
+    
+    if (lowestFrameRate < 40) {
+        ANIMATIONS.text1.kill();
+        ANIMATIONS.text2.kill();
+        ANIMATIONS.text2.kill();
+    }
+});
 
 var $container = $(SELECTORS.ANIMATION_CONTAINER);
 var $debugButton = $(SELECTORS.DEBUG_BUTTON);
@@ -55,6 +66,8 @@ function createSceneController() {
 
 function addHeaderScene(controller) {
     var headerAnimationObject = createHeaderAnimation();
+    
+    ANIMATIONS.header = headerAnimationObject.header;
 
     var headerScene = new ScrollMagic.Scene({
         triggerElement: SELECTORS.MARK_HEADER,
@@ -72,6 +85,10 @@ function addCharacterScenes(controller) {
     var textAnimation1 = createTextAnimation(SELECTORS.TEXT_BOX_1);
     var textAnimation2 = createTextAnimation(SELECTORS.TEXT_BOX_2);
     var textAnimation3 = createTextAnimation(SELECTORS.TEXT_BOX_3);
+    
+    ANIMATIONS.text1 = textAnimation1;
+    ANIMATIONS.text2 = textAnimation2;
+    ANIMATIONS.text3 = textAnimation3;
 
     var characterScene1 = new ScrollMagic.Scene({
         triggerElement: SELECTORS.MARK_CHARACTER_FIRST,
@@ -122,13 +139,15 @@ function addCharacterScenes(controller) {
 }
 
 function addFightScene(controller) {
+    ANIMATIONS.fight = createFightAnimation();
+    
     var FightScene = new ScrollMagic.Scene({
         triggerElement: SELECTORS.MARK_FIGHT_SCENE_START,
         duration: "200%", // two times the height?
         triggerHook: 0
     })
     .setPin(".hero-fight-parallax")
-    .setTween(createFightAnimation())
+    .setTween(ANIMATIONS.fight)
     .on('enter', function() {
         console.log('fight scene!');
     })
