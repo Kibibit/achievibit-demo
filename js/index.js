@@ -443,7 +443,7 @@ $(document).ready(function() {
     self.dropsThreshold = dropsThreshold || 2;
     self.firstDropsTrigger = true;
 
-    Emitter(self);
+    toEmitter(self);
 
     if (showDebugBox) {
       $('body').append([
