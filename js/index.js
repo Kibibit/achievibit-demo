@@ -437,7 +437,7 @@ $(document).ready(function() {
   }
 
   function FPS(framesThreshold, dropsThreshold, showDebugBox) {
-    var self = this;
+    var self = {};
 
     self.framesThreshold = framesThreshold || 30;
     self.dropsThreshold = dropsThreshold || 2;
@@ -465,6 +465,8 @@ $(document).ready(function() {
     var numberOfDrops = 0;
 
     ticker.addEventListener("tick", update);
+    
+    return self;
 
     function update() {
 
