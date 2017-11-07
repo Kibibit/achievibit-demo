@@ -245,7 +245,7 @@ footer.page-footer {
 
 .house {
   position: absolute;
-  top: calc(150px - 80px);
+  top: 10px;
   left: 0;
   margin: 0 100px;
   background: url(https://orig00.deviantart.net/a07d/f/2015/051/9/c/pokemon_house_2__free__by_sallynyan-d8is9w6.png);
@@ -253,7 +253,7 @@ footer.page-footer {
   width: 417px;
 }
 .house.pos2 {
-  top: calc(300px + 50px + 150px - 80px);
+  top: calc(300px + 50px);
   left: auto;
   right: 0;
 }
@@ -262,7 +262,7 @@ footer.page-footer {
   right: 0;
 }
 .house.pos3 {
-  top: calc(300px + 50px + 300px + 50px + 150px - 80px);
+  top: calc(300px + 50px + 300px + 50px);
 }
 .house.visible .rpg-text-box {
   opacity: 1;
