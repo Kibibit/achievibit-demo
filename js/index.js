@@ -23,9 +23,9 @@ FPS(function(currFrameRate) {
     lowestFrameRate = currFrameRate < lowestFrameRate ? currFrameRate : lowestFrameRate;
     
     if (lowestFrameRate < 40) {
-        ANIMATIONS.text1.kill();
-        ANIMATIONS.text2.kill();
-        ANIMATIONS.text2.kill();
+        ANIMATIONS.text1 && ANIMATIONS.text1.kill();
+        ANIMATIONS.text2 && ANIMATIONS.text2.kill();
+        ANIMATIONS.text3 && ANIMATIONS.text2.kill();
     }
 });
 
@@ -160,6 +160,8 @@ function addFightScene(controller) {
 
 function createTextAnimation(id) {
     if (!id) return;
+    
+    if (lowestFrameRate < 40) return;
 
     var mySplitText = new SplitText(id, { type: 'words,chars' });
     var chars = mySplitText.chars;
