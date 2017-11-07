@@ -179,7 +179,7 @@ function addFightScene(controller) {
 function createTextAnimation(id) {
     if (!id) return;
     
-    if (lowestFrameRate < 40) return;
+    // if (lowestFrameRate < 40) return;
 
     var mySplitText = new SplitText(id, { type: 'words,chars' });
     var chars = mySplitText.chars;
