@@ -442,7 +442,7 @@ $(document).ready(function() {
     self.framesThreshold = framesThreshold || 30;
     self.dropsThreshold = dropsThreshold || 2;
 
-    Emitter(self);
+    toEmitter(self);
 
     if (showDebugBox) {
       $('body').append([
@@ -465,7 +465,7 @@ $(document).ready(function() {
     var numberOfDrops = 0;
 
     ticker.addEventListener("tick", update);
-    
+
     return self;
 
     function update() {
@@ -511,3 +511,23 @@ $(document).ready(function() {
   }
 
 });
+
+function toEmitter(obj) {
+  obj.eventHash = {};
+
+  obj.trigger = function() {
+    var eventName = arguments[0];
+    var args = Array.prototype.slice.call(arguments, 1);
+
+    if (obj.eventHash[eventName])
+      obj.eventHash[eventName].forEach(function(handler) {
+        handler.apply(this, args);
+      });
+  }
+
+  obj.on = function(eventName, handler) {
+    (obj.eventHash[eventName]) ?
+    obj.eventHash[eventName].push(handler):
+      obj.eventHash[eventName] = [handler];
+  }
+}
