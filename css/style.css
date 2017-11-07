@@ -20,6 +20,7 @@
 .rpg-text-box {
   position: absolute;
   top: 93%;
+  left: 0;
   line-height: 1.5em;
   margin: auto;
   background: white;
@@ -253,6 +254,10 @@ footer.page-footer {
 }
 .house.pos2 {
   top: calc(300px + 50px + 150px - 80px);
+  left: auto;
+  right: 0;
+}
+.house.pos2 .rpg-text-box {
   left: auto;
   right: 0;
 }
