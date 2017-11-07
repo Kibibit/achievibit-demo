@@ -1,5 +1,5 @@
 .hud {  
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 0;  
   font-family: "Lucida Console", Monaco, monospace;
