@@ -18,6 +18,7 @@ var SELECTORS = {
 };
     
 var lowestFrameRate = 60;
+var numberOfDrops = 0;
     
 FPS(function(currFrameRate) {
     if (currFrameRate < lowestFrameRate) {
@@ -25,7 +26,12 @@ FPS(function(currFrameRate) {
         console.info('lowest framerate: ' + lowestFrameRate);
     }
     
-    if (lowestFrameRate < 40) {
+    if (currFrameRate < 40) {
+        numberOfDrops++;
+        console.info('framerate dropped below 40');
+    }
+    
+    if (numberOfDrops < 2) {
         ANIMATIONS.text1 && ANIMATIONS.text1.kill();
         ANIMATIONS.text2 && ANIMATIONS.text2.kill();
         ANIMATIONS.text3 && ANIMATIONS.text3.kill();
