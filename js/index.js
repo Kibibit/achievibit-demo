@@ -15,6 +15,8 @@ var SELECTORS = {
     TEXT_BOX_2: '#text2',
     TEXT_BOX_3: '#text3'
 };
+    
+FPS();
 
 var $container = $(SELECTORS.ANIMATION_CONTAINER);
 var $debugButton = $(SELECTORS.DEBUG_BUTTON);
@@ -376,5 +378,35 @@ function createHeaderAnimation() {
         duration: deltaHeight
     };
 }
+    
+  function FPS(callback) {
+    if (!$('#framerate').length) {
+        $('body').append('<div class="hud">FPS: <span id="framerate">0</span></div>');
+    }
+
+    var $framerate = document.querySelector("#framerate");
+    var prevTime = 0;
+    var frames = 0;
+    var ticker = TweenLite.ticker;
+
+    ticker.addEventListener("tick", update);
+
+    function update() {
+
+      var current = ticker.time;
+
+      frames++;
+
+      if (current > prevTime + 1) {
+        var fps = Math.round(frames / (current - prevTime));
+        $framerate.textContent = fps;
+        prevTime = current;
+        frames = 0;
+
+        // You could run some logic here based on the fps
+        callback && callback(fps);
+      }  
+    }
+  }
     
 });
