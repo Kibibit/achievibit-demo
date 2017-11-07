@@ -17,9 +17,10 @@ $(document).ready(function() {
     TEXT_BOX_3: '#text3'
   };
 
-
-
-  FPS(30, 2, true)
+  FPS(30 /* framesThreshold */ ,
+      2 /* dropsThreshold */ ,
+      false /* alwaysTrigger */ ,
+      true /* showDebugBox */ )
     .on('drops-limit', function(totalDrops) {
       console.log('FUCK!');
 
@@ -436,7 +437,7 @@ $(document).ready(function() {
     };
   }
 
-  function FPS(framesThreshold, dropsThreshold, showDebugBox) {
+  function FPS(framesThreshold, dropsThreshold, alwaysTrigger, showDebugBox) {
     var self = {};
 
     self.framesThreshold = framesThreshold || 30;
@@ -450,7 +451,7 @@ $(document).ready(function() {
         '<div class="hud">',
         'FPS: <span id="framerate">0</span>; ',
         'lowest FPS: <span id="lowest">null</span>; ',
-        'DROPS Below 30: <span id="drops">0</span>',
+        'DROPS Below ', self.framesThreshold, 'FPS: <span id="drops">0</span>',
         '</div>'
       ].join(''));
     }
@@ -503,7 +504,7 @@ $(document).ready(function() {
           self.trigger('drops-updated', lowestFrameRate);
         }
 
-        if (self.firstDropsTrigger && numberOfDrops >= self.dropsThreshold) {
+        if ((alwaysTrigger || self.firstDropsTrigger) && numberOfDrops >= self.dropsThreshold) {
           self.trigger('drops-limit', numberOfDrops);
           self.firstDropsTrigger = false;
           $drops.textContent = numberOfDrops;
