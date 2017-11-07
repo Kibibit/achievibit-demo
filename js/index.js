@@ -181,7 +181,6 @@ function createTextAnimation(id) {
     var tl = new TimelineMax({ paused: true });
     tl.staggerFrom(chars, 0.8, {
         opacity: 0,
-        immediateRender:false,
         ease: SteppedEase.config(1)
     }, 0.1, "+=0");
 
