@@ -426,7 +426,7 @@ function createHeaderAnimation() {
     
   function FPS(callback) {
     if (!$('#framerate').length) {
-        $('body').append('<div class="hud">FPS: <span id="framerate">0</span>; lowest FPS: <span id="lowest"></span>; DROPS Below 40: <span id="drops"></span></div>');
+        $('body').append('<div class="hud">FPS: <span id="framerate">0</span>; lowest FPS: <span id="lowest">null</span>; DROPS Below 40: <span id="drops">0</span></div>');
     }
 
     var $framerate = document.querySelector("#framerate");
