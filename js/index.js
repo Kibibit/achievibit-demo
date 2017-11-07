@@ -32,9 +32,9 @@ FPS(function(currFrameRate) {
     }
     
     if (numberOfDrops > 2) {
-        ANIMATIONS.text1 && ANIMATIONS.text1.kill();
-        ANIMATIONS.text2 && ANIMATIONS.text2.kill();
-        ANIMATIONS.text3 && ANIMATIONS.text3.kill();
+        ANIMATIONS.text1 && ANIMATIONS.text1.progress(1, false) && ANIMATIONS.text1.kill();
+        ANIMATIONS.text2 && ANIMATIONS.text2.progress(1, false) && ANIMATIONS.text2.kill();
+        ANIMATIONS.text3 && ANIMATIONS.text3.progress(1, false) && ANIMATIONS.text3.kill();
     }
 });
 
