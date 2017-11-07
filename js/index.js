@@ -18,6 +18,7 @@ var SELECTORS = {
 };
 
     var $lowest;
+    var $drops;
     var lowestFrameRate = -1;
     var numberOfDrops = 0;
     
@@ -35,6 +36,7 @@ FPS(function(currFrameRate) {
     
     if (currFrameRate < 40) {
         numberOfDrops++;
+        $drops.textContent = numberOfDrops;
         console.info('framerate dropped below 40');
     }
     
@@ -44,6 +46,7 @@ FPS(function(currFrameRate) {
         ANIMATIONS.text3 && ANIMATIONS.text3.progress(1, false) && ANIMATIONS.text3.kill();
         $('.rpg-text-box').addClass('always-show');
         numberOfDrops = 0;
+        $drops.textContent = numberOfDrops;
     }
 });
 
@@ -423,11 +426,12 @@ function createHeaderAnimation() {
     
   function FPS(callback) {
     if (!$('#framerate').length) {
-        $('body').append('<div class="hud">FPS: <span id="framerate">0</span>; lowest FPS: <span id="lowest"></span></div>');
+        $('body').append('<div class="hud">FPS: <span id="framerate">0</span>; lowest FPS: <span id="lowest"></span>; DROPS Below 40: <span id="drops"></span></div>');
     }
 
     var $framerate = document.querySelector("#framerate");
     $lowest = document.querySelector("#lowest");
+    $drops = document.querySelector("#drops");
     var prevTime = 0;
     var frames = 0;
     var ticker = TweenLite.ticker;
