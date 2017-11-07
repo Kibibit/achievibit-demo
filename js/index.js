@@ -176,7 +176,11 @@ function createTextAnimation(id) {
     var chars = mySplitText.chars;
 
     var tl = new TimelineMax({ paused: true });
-    tl.staggerFrom(chars, 0.8, {opacity: 0, ease: SteppedEase.config(1)}, 0.1, "+=0");
+    tl.staggerFrom(chars, 0.8, {
+        opacity: 0,
+        immediateRender:false,
+        ease: SteppedEase.config(1)
+    }, 0.1, "+=0");
 
     return tl;
 }
