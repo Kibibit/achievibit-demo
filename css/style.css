@@ -1,14 +1,14 @@
-.hud {  
-  position: fixed;
+.hud {
+  background: rgba(0, 0, 0, 0.3);
   bottom: 0;
-  left: 0;  
-  font-family: "Lucida Console", Monaco, monospace;
+  font-family: 'Lucida Console', Monaco, monospace;
+  font-size: 10px;
+  left: 0;
   letter-spacing: 1px;
   line-height: 1.6;
-  font-size: 10px;
   padding: 4px 8px;
-  background: rgba(0,0,0,0.3);
   pointer-events: none;
+  position: fixed;
   user-select: none;
   z-index: 5000;
 }
@@ -18,22 +18,22 @@
 }
 
 .rpg-text-box {
-  position: absolute;
-  top: 93%;
+  background: white;
+  border: 1px solid white;
+  border-radius: 0.2em;
+  box-shadow: 0 1px 0 1px black, inset 0 1px 0 1px black, 0 0 0 1px black, inset 0 0 0 1px black, 3px 5px 0 1px rgba(0, 0, 0, 0.25);
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.7rem;
   left: 0;
   line-height: 1.5em;
   margin: auto;
-  background: white;
-  border: 1px solid white;
-  padding: 1em;
-  font-size: 0.7rem;
-  font-family: 'Press Start 2P', cursive;
-  border-radius: 0.2em;
-  box-shadow: 0 1px 0 1px black, inset 0 1px 0 1px black, 0 0 0 1px black, inset 0 0 0 1px black, 3px 5px 0px 1px rgba(0, 0, 0, 0.25);
+  max-width: 35vw;
   opacity: 0;
+  padding: 1em;
+  position: absolute;
+  top: 93%;
   transform: translate(0, 50px);
   transition: all 250ms;
-  max-width: 35vw;
 }
 
 .achievibit-logo {
@@ -42,228 +42,258 @@
 }
 
 footer.page-footer {
-  background: url("http://yesofcorsa.com/wp-content/uploads/2016/12/Pixel-Wallpaper-Background.jpg");
+  background: url('http://yesofcorsa.com/wp-content/uploads/2016/12/Pixel-Wallpaper-Background.jpg');
   background-size: contain;
   padding: 10px;
 }
 
 .end {
   display: flex;
-  justify-content: center;
-  align-items: center;
   height: 300px;
+
+  align-items: center;
+  justify-content: center;
 }
 
 .hero-fight-parallax {
+  background-color: grey;
   /* fight scene fills the screen when the parallax
   hits the sweet spot. */
   height: 100vh;
-  background-color: grey;
-  position: relative;
   overflow: hidden;
+  position: relative;
   z-index: 10;
 }
+
 .hero-fight-parallax .background {
-  background: url("https://i.pinimg.com/originals/69/14/6e/69146e0d788557d18530d37e139999d7.gif");
-  width: 100vw;
-  height: 100vh;
-  background-size: cover;
+  background: url('https://i.pinimg.com/originals/69/14/6e/69146e0d788557d18530d37e139999d7.gif');
   background-position: bottom;
-  z-index: 0;
+  background-size: cover;
+  height: 100vh;
   position: absolute;
   top: 0;
+  width: 100vw;
+  z-index: 0;
 }
+
 .hero-fight-parallax .monster {
-  width: 475px;
-  height: 70%;
-  background: url("https://vignette.wikia.nocookie.net/bloodbattaliongame/images/b/b7/Kraken_Figure.png/revision/latest?cb=20131002170845");
+  background: url('https://vignette.wikia.nocookie.net/bloodbattaliongame/images/b/b7/Kraken_Figure.png/revision/latest?cb=20131002170845');
   background-size: cover;
-  position: absolute;
   bottom: 0;
+  height: 70%;
   left: 0;
-  right: 0;
   margin: auto;
+  position: absolute;
+  right: 0;
+  width: 475px;
 }
+
 .hero-fight-parallax .shadow-hero {
   background-color: black;
-  width: 200px;
-  height: 40%;
-  position: absolute;
   bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
   color: white;
+  height: 40%;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  width: 200px;
 }
 
 .test-test-test {
-  padding: 300px 100px 0;
   overflow: hidden;
+  padding: 300px 100px 0;
 }
 
 .main {
+  min-height: 100%;
   overflow-x: hidden;
   position: relative;
   width: 100vw;
-  min-height: 100%;
 }
 
 .app-header {
-  display: block;
   background: transparent;
+  box-shadow: 0 2px 5px transparent;
+  color: #FFFFFF;
+  display: block;
+  height: 300px;
+  left: 0;
   position: fixed;
   top: 0;
-  left: 0;
-  width: 100%;
-  color: #fff;
-  height: 300px;
-  box-shadow: 0 2px 5px transparent;
-  z-index: 15;
   -webkit-transform: translateZ(0);
+  width: 100%;
+  z-index: 15;
 }
+
 .app-header .background-container {
-  position: absolute;
-  overflow: hidden;
-  top: 0;
-  left: 0;
   bottom: 0;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
   right: 0;
+  top: 0;
 }
+
 .app-header .background {
+  background-size: cover;
+  bottom: -5px;
+  left: -5px;
   pointer-events: none;
   position: absolute;
-  background-size: cover;
-  top: -5px;
-  left: -5px;
-  bottom: -5px;
   right: -5px;
+  top: -5px;
+
   will-change: transform, opacity;
 }
+
 .app-header #background-back {
   background: rgba(0, 0, 0, 0.5);
-  -webkit-backdrop-filter: blur(5px);
-  backdrop-filter: blur(5px);
   background-position: left center;
-  filter: blur(2px);
   opacity: 0;
+
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  filter: blur(2px);
 }
+
 .app-header #background-front {
   background-image: url(https://orig00.deviantart.net/aaa6/f/2017/154/3/b/2560_x_1080_pixel_80s_sunset_background_by_lesian2-dbbf4vs.png);
   background-position: left center;
 }
+
 .app-header .header-content {
-  position: relative;
   height: 100%;
+  position: relative;
   width: 100%;
 }
+
 .app-header .header-content .app-toolbar {
   display: flex;
   flex-direction: row;
-  align-items: center;
-  position: relative;
+  font-size: 14px;
   height: 64px;
   padding: 0 16px;
   pointer-events: none;
-  font-size: 14px;
+  position: relative;
+
+  align-items: center;
 }
+
 .app-header .header-content #large-toolbar {
-  position: absolute;
   bottom: 0;
-  transform-origin: left top;
   margin-bottom: 24px;
   margin-bottom: 16px;
+  position: absolute;
+  transform-origin: left top;
   width: 100%;
 }
+
 .app-header .header-content .small-title,
 .app-header .header-content .large-title {
-  transform-origin: left top;
-  white-space: nowrap;
-  flex: 1;
-  flex-basis: 0.000000001px;
-  overflow: hidden;
+  font-family: 'Press Start 2P', cursive;
   font-weight: 400;
   line-height: 1.5;
+  overflow: hidden;
   position: relative;
-  font-family: 'Press Start 2P', cursive;
+  transform-origin: left top;
+  white-space: nowrap;
+
+  flex: 1;
+  flex-basis: 0.000000001px;
 }
+
 .app-header .header-content .small-title {
   margin-left: 14px;
   opacity: 0;
 }
+
 .app-header .header-content .large-title {
-  will-change: transform, opacity;
   font-size: 56px;
   font-size: 2em;
   margin-left: 64px;
+
+  will-change: transform, opacity;
 }
+
 .app-header .header-content .icon-button {
-  display: inline-block;
-  position: relative;
-  padding: 6px;
-  outline: none;
-  user-select: none;
-  font-size: 0;
-  line-height: 1;
-  width: 40px;
-  height: 40px;
   box-sizing: border-box !important;
+  display: inline-block;
+  font-size: 0;
+  height: 40px;
+  line-height: 1;
+  outline: none;
+  padding: 6px;
+  position: relative;
+  user-select: none;
+  width: 40px;
 }
+
 .app-header .header-content .icon-button .icon {
   display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  height: 100%;
   position: relative;
   vertical-align: middle;
-  fill: currentcolor;
-  stroke: none;
   width: 100%;
-  height: 100%;
+
+  align-items: center;
+  fill: currentcolor;
+  justify-content: center;
+  stroke: none;
 }
 
 .btn {
-  z-index: 500;
-  padding: 10px;
-  text-transform: uppercase;
-  position: absolute;
-  top: 0;
-  right: 0;
   background: black;
   color: white;
-  text-weight: 700;
   cursor: pointer;
+  display: none;
+  padding: 10px;
+  position: absolute;
+  right: 0;
+  text-transform: uppercase;
+  top: 0;
+  z-index: 500;
+
+  text-weight: 700;
 }
 
-.preview .btn {
-  display: none;
+.debug .btn {
+  display: block;
 }
-.preview .corner {
-  background: #B69F66 !important;
+
+.debug .corner {
+  background: #6B5428 !important;
 }
-.preview .mark {
-  visibility: hidden;
+
+.debug .mark {
+  visibility: visible;
 }
 
 .house {
-  position: absolute;
-  top: 10px;
-  left: 0;
-  margin: 0 100px;
   background: url(https://orig00.deviantart.net/a07d/f/2015/051/9/c/pokemon_house_2__free__by_sallynyan-d8is9w6.png);
   height: 158px;
+  left: 0;
+  margin: 0 100px;
+  position: absolute;
+  top: 10px;
   width: 417px;
 }
+
 .house.pos2 {
-  top: calc(300px + 50px);
   left: auto;
   right: 0;
+  top: calc(300px + 50px);
 }
+
 .house.pos2 .rpg-text-box {
   left: auto;
   right: 0;
 }
+
 .house.pos3 {
   top: calc(300px + 50px + 300px + 50px);
 }
+
 .house.visible .rpg-text-box {
   opacity: 1;
   transform: translate(0, 0);
@@ -273,17 +303,20 @@ html {
   box-sizing: border-box;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
+
   -webkit-font-smoothing: antialiased;
 }
 
 body {
-  width: 100vw;
-  overflow-x: hidden;
-  margin: 0;
-  padding: 0;
   background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/154887/Routetut.png);
+  margin: 0;
+  overflow-x: hidden;
+  padding: 0;
+  width: 100vw;
 }
 
 .container {
@@ -294,96 +327,112 @@ body {
 }
 
 .pre-road {
-  width: 50px;
+  background: #B69F66;
   height: 600px;
   margin-right: auto;
-  background: #B69F66;
   position: absolute;
   top: -600px;
+  width: 50px;
 }
 
 .road {
-  width: 50px;
+  background: #B69F66;
   height: 300px;
   margin-right: auto;
-  background: #B69F66;
   position: relative;
+  width: 50px;
 }
+
 .road.road-right {
-  margin-right: 0;
   margin-left: auto;
+  margin-right: 0;
 }
+
 .road .character {
   top: -43px;
 }
+
 .road .mark {
-  position: absolute;
-  width: 100%;
-  top: 50%;
   background: red;
   height: 1px;
+  position: absolute;
+  top: 50%;
+  visibility: hidden;
+  width: 100%;
 }
+
 .road .mark:after {
-  content: "mark";
+  color: red;
+  content: 'mark';
+  display: block;
   text-align: center;
   width: 100%;
-  display: block;
-  color: red;
 }
+
 .road .mark.mark-end {
   top: 100%;
 }
 
 .horizontal-part {
-  height: 50px;
-  width: calc(100% - 50px);
   display: inline-block;
   display: -webkit-box;
-  display: -moz-box;
+  display:    -moz-box;
   display: -ms-flexbox;
   display: -webkit-flex;
-  display: flex;
+  display:         flex;
+  height: 50px;
   position: relative;
+  width: calc(100% - 50px);
 }
+
 .horizontal-part .character {
   background-position-y: -42px;
 }
+
 .horizontal-part .character.reverse {
   background-position-y: -124px;
 }
+
 .horizontal-part.left-to-right .corner {
   border-bottom-left-radius: 50%;
 }
+
 .horizontal-part.left-to-right .corner:last-of-type {
-  border-top-right-radius: 50%;
   border-bottom-left-radius: 0;
+  border-top-right-radius: 50%;
   position: absolute;
   right: -50px;
 }
+
 .horizontal-part.right-to-left .character {
+  background-position-y: -124px;
   left: auto;
   right: 9px;
-  background-position-y: -124px;
 }
+
 .horizontal-part.right-to-left .character.reverse {
   background-position-y: -42px;
 }
+
 .horizontal-part.right-to-left .corner {
   border-top-left-radius: 50%;
 }
+
 .horizontal-part.right-to-left .corner:last-of-type {
   border-bottom-right-radius: 50%;
   border-top-left-radius: 0;
   position: absolute;
   right: -50px;
 }
+
 .horizontal-part .horizontal-road {
   background: #B69F66;
   height: 100%;
   width: calc(100% - 50px);
 }
+
 .horizontal-part .corner {
-  background: #6B5428;
+  background: #B69F66;
   height: 50px;
   width: 50px;
 }
@@ -391,40 +440,43 @@ body {
 .crow {
   background: url(http://spritedatabase.net/files/ds/62/Sprite/Crow.PNG);
   background-position-y: -36px;
-  width: 40px;
   height: 60px;
-  position: absolute;
-  top: 600px;
-  right: 200px;
   opacity: 0;
+  position: absolute;
+  right: 200px;
+  top: 600px;
+  width: 40px;
 }
 
 .character {
   background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/154887/char-fixed.png);
-  width: 32px;
   height: 40px;
+  left: 9px;
+  opacity: 0;
   position: absolute;
   top: 6px;
-  left: 9px;
+  width: 32px;
   z-index: 3;
-  opacity: 0;
 }
+
 .character.reverse {
   background-position-y: -82px;
 }
+
 .character.active {
   opacity: 1;
 }
+
 .character:after {
-  content: "";
-  position: absolute;
-  bottom: -2px;
   background: black;
-  height: 8px;
-  width: 90%;
-  left: 0;
-  right: 0;
   border-radius: 50%;
+  bottom: -2px;
+  content: '';
+  height: 8px;
+  left: 0;
   margin: auto;
   opacity: 0.2;
+  position: absolute;
+  right: 0;
+  width: 90%;
 }
