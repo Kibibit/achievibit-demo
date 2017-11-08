@@ -3,6 +3,8 @@ console.clear();
 $(document).ready(function() {
   var ANIMATIONS = {};
 
+  var SCENES = {};
+
   var SELECTORS = {
     DEBUG_BUTTON: '.btn',
     ANIMATION_CONTAINER: 'body',
@@ -28,6 +30,9 @@ $(document).ready(function() {
         ANIMATIONS.text1.seek(0).kill();
         ANIMATIONS.text2.seek(0).kill();
         ANIMATIONS.text3.seek(0).kill();
+        // don't play the fight scene
+        ANIMATIONS.fight.seek(1).kill();
+        SCENES.fightScene.destroy(true);
 
         $('.rpg-text-box').addClass('always-show');
         numberOfDrops = 0;
@@ -150,7 +155,7 @@ $(document).ready(function() {
   function addFightScene(controller) {
     ANIMATIONS.fight = createFightAnimation();
 
-    var FightScene = new ScrollMagic.Scene({
+    SCENES.fightScene = new ScrollMagic.Scene({
         triggerElement: SELECTORS.MARK_FIGHT_SCENE_START,
         duration: "200%", // two times the height?
         triggerHook: 0
