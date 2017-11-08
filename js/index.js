@@ -24,7 +24,7 @@ $(document).ready(function() {
       false /* alwaysTrigger */ ,
       true /* showDebugBox */ )
     .on('drops-limit', function(totalDrops) {
-      console.log('FUCK!');
+      console.log('~= Animation degradation triggered =~');
 
       if (ANIMATIONS.text1) {
         ANIMATIONS.text1.seek(0).kill();
