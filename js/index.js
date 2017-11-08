@@ -24,12 +24,17 @@ $(document).ready(function() {
     .on('drops-limit', function(totalDrops) {
       console.log('FUCK!');
 
-      ANIMATIONS.text1 && ANIMATIONS.text1.progress(1, false) && ANIMATIONS.text1.kill();
-      ANIMATIONS.text2 && ANIMATIONS.text2.progress(1, false) && ANIMATIONS.text2.kill();
-      ANIMATIONS.text3 && ANIMATIONS.text3.progress(1, false) && ANIMATIONS.text3.kill();
-      if (!ANIMATIONS.text1) {
+      if (ANIMATIONS.text1) {
+        ANIMATIONS.text1.seek(0).kill();
+        ANIMATIONS.text2.seek(0).kill();
+        ANIMATIONS.text3.seek(0).kill();
+
         $('.rpg-text-box').addClass('always-show');
         numberOfDrops = 0;
+
+        ANIMATIONS.text1 = ANIMATIONS.text2 = ANIMATIONS.text3 = {
+          play: function() {}
+        };
       }
     });
 
