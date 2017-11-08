@@ -32,7 +32,7 @@ $(document).ready(function() {
         ANIMATIONS.text3.seek(0).kill();
         // don't play the fight scene
         SCENES.fightScene.destroy(true);
-        ANIMATIONS.fight.seek(1).pause();
+        ANIMATIONS.fight.seek('-=0').kill();
 
         $('.rpg-text-box').addClass('always-show');
         numberOfDrops = 0;
