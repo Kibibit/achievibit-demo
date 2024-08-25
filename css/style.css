@@ -158,7 +158,7 @@ footer.page-footer {
 }
 
 .app-header #background-front {
-  background-image: url(./images/header.webp);
+  background-image: url(../images/header.webp);
   background-position: left center;
 }
 
